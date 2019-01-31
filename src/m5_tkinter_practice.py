@@ -33,10 +33,12 @@ def main():
     button.grid()
 
     # -------------------------------------------------------------------------
-    # TODO: 5. After reading and understanding the m3e module,
+    # DONE: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # -------------------------------------------------------------------------
+
+    button['command'] = (lambda: print('Hello'))
 
     # -------------------------------------------------------------------------
     # TODO: 6. After reading and understanding the m4e module,
