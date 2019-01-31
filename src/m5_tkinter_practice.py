@@ -41,16 +41,22 @@ def main():
     button['command'] = (lambda: print('Hello'))
 
     # -------------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # DONE: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # -------------------------------------------------------------------------
+    entry_box = ttk.Entry(frame)
+    entry_box.grid()
+    second_button = ttk.Button(frame, text='Second Button')
+    second_button['command'] = lambda: second_function(entry_box)
+    second_button.grid()
+
 
     # -------------------------------------------------------------------------
-    # TODO: 7.
+    # DONE: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -73,14 +79,33 @@ def main():
     #      n = int(s)
     ####################################################################
 
-    # -------------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
-    # -------------------------------------------------------------------------
+    second_entry_box = ttk.Entry(frame)
+    second_entry_box.grid()
+    third_button = ttk.Button(frame, text='Third Button')
+    third_button['command'] = lambda: third_function(entry_box, second_entry_box)
+    third_button.grid()
 
-
+    # -------------------------------------------------------------------------
+    # DONE: 8. As time permits, do other interesting GUI things!
+    # -------------------------------------------------------------------------
 
     root.mainloop()
 
+
+def second_function(entry_box):
+    x = entry_box.get()
+    if x == "ok":
+        print('Hello')
+    else:
+        print('Goodbye')
+    return
+
+def third_function(entry_box, second_entry_box):
+    x = entry_box.get()
+    n = int(second_entry_box.get())
+
+    for k in range(n):
+        print(x)
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
