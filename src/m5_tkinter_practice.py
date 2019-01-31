@@ -13,20 +13,24 @@ from tkinter import ttk
 def main():
     """ Constructs a GUI with stuff on it. """
     # -------------------------------------------------------------------------
-    # TODO: 2. After reading and understanding the m1e module,
+    # DONE: 2. After reading and understanding the m1e module,
     #   ** make a window that shows up. **
     # -------------------------------------------------------------------------
-
+    root = tkinter.Tk()
 
     # -------------------------------------------------------------------------
-    # TODO: 3. After reading and understanding the m2e module,
+    # DONE: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
     # -------------------------------------------------------------------------
+    frame = ttk.Frame(root, padding=10)
+    frame.grid()
 
     # -------------------------------------------------------------------------
-    # TODO: 4. After reading and understanding the m2e module,
+    # DONE: 4. After reading and understanding the m2e module,
     #   ** put a Button on the Frame. **
     # -------------------------------------------------------------------------
+    button = ttk.Button(frame, text='')
+    button.grid()
 
     # -------------------------------------------------------------------------
     # TODO: 5. After reading and understanding the m3e module,
@@ -70,6 +74,10 @@ def main():
     # -------------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
+
+
+
+    root.mainloop()
 
 
 # -----------------------------------------------------------------------------
